@@ -3,10 +3,10 @@ Code showed in QA&amp;Test conference: Prompt Engineering in SW Test
 
 Usage of iterative calls to generate documentation and test.
 
-*Pre-Requisites*
+# Pre-Requisites:
 Profesional ChatGPT account with available tokens and key installed in the computer.
 
-+Libraries:+
+# Libraries:
 
 Libraries required for the examples:
 
