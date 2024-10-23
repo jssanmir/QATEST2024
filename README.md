@@ -8,7 +8,7 @@ Profesional ChatGPT account with available tokens and key installed in the compu
 
 *Libraries:*
 
-# install from PyPI
+# Install  OpenAI
 pip install openai
 
 # For image processign example and character recognition
