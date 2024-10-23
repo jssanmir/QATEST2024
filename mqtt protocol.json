@@ -1,0 +1,141 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Sensor Data",
+    "description": "Wireless sensor input data.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "s",
+        "t",
+        "q",
+        "c"
+    ],
+    "properties": {
+        "s": {
+            "title": "Sequence Number",
+            "description": "A number incremented for every publish of sensor data.",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9
+        },
+        "t": {
+            "title": "Timestamp",
+            "description": "An ISO 8601 timestamp of the UTC time for the sensor reading.",
+            "type": "string",
+            "format": "date-time"
+        },
+        "q": {
+            "title": "Quality Code",
+            "description": "A value that indicates quality of the sensor reading.",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+        },
+        "c": {
+            "title": "Configuration Index",
+            "description": "A number increment when the configuration changes.",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9
+        },
+        "x": {
+            "title": "Accelerometer 1",
+            "description": "Accelerometer x-axis value.",
+            "$ref": "#/definitions/accel_value"
+        },
+        "y": {
+            "title": "Accelerometer 1",
+            "description": "Accelerometer y-axis value.",
+            "$ref": "#/definitions/accel_value"
+        },
+        "z": {
+            "title": "Accelerometer 1",
+            "description": "Accelerometer z-axis value.",
+            "$ref": "#/definitions/accel_value"
+        },
+        "ai1": {
+            "title": "Analog Input 1",
+            "description": "The value of analog input 1.",
+            "$ref": "#/definitions/ai_value"
+        },
+        "ai2": {
+            "title": "Analog Input 2",
+            "description": "The value of analog input 2.",
+            "$ref": "#/definitions/ai_value"
+        },
+        "ai3": {
+            "title": "Analog Input 3",
+            "description": "The value of analog input 3.",
+            "$ref": "#/definitions/ai_value"
+        },
+        "di1": {
+            "title": "Digital Input 1",
+            "description": "The value of digital input 1.",
+            "$ref": "#/definitions/di_value"
+        },
+        "di2": {
+            "title": "Digital Input 2",
+            "description": "The value of digital input 2.",
+            "$ref": "#/definitions/di_value"
+        },
+        "do1": {
+            "title": "Digital Output 1",
+            "description": "The state of digital output 1.",
+            "$ref": "#/definitions/do_value"
+        },
+        "do2": {
+            "title": "Digital Output 2",
+            "description": "The state of digital output 2.",
+            "$ref": "#/definitions/do_value"
+        },
+        "temp1": {
+            "title": "Temperature Input 1",
+            "description": "The value of temperature input 1.",
+            "$ref": "#/definitions/temp_value"
+        },
+        "temp2": {
+            "title": "Temperature Input 2",
+            "description": "The value of temperature input 2.",
+            "$ref": "#/definitions/temp_value"
+        },
+        "tempint": {
+            "title": "Internal Temperature",
+            "description": "The internal temperature of the sensor platform.",
+            "$ref": "#/definitions/temp_value"
+        },
+        "vbatt": {
+            "title": "Supply Voltage",
+            "description": "The voltage supplied to the sensor platform.",
+            "$ref": "#/definitions/vbatt_value"
+        }
+    },
+    "definitions": {
+        "ai_value": {
+            "type": "number"
+        },
+        "di_value": {
+            "oneOf": [
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+        "do_value": {
+            "type": "boolean"
+        },
+        "temp_value": {
+            "type": "number"
+        },
+        "vbatt_value": {
+            "type": "number"
+        },
+        "accel_value": {
+            "type": "number",
+            "minimum": -9.999,
+            "maximum": 9.999
+        }
+    }
+}
