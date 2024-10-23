@@ -6,11 +6,12 @@ Usage of iterative calls to generate documentation and test.
 *Pre-Requisites*
 Profesional ChatGPT account with available tokens and key installed in the computer.
 
-*Libraries:*
+#Libraries:
 
 # Install  OpenAI
 pip install openai
 
-# For image processign example and character recognition
+# For image processign example 
 pip install pillow
+# For character recognition
 pip install pytesseract
